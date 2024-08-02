@@ -19,9 +19,11 @@
 </head>
 
 <body id="home">
-	<nav>
-    <ul class="menu">
-			<h4 class="view-title"></h4>
+    <nav>
+        <h4 class="view-title">DQS users Admin</h4>
+            <div>
+                <input type=text />
+            </div>
 			<div class="menu-items">
 				<li class="li-1">
 					<a class="navbar-link" data-page="inventory">Inventory</a>
@@ -42,7 +44,30 @@
 					<a class="navbar-link" data-page="stats">Stats</a>
 				</li>
 			</div>
-			<li class="toggle">
+        <!--<ul class="menu">
+			<h4 class="view-title">DQS users Admin</h4>
+            <input type=text />
+			<div class="menu-items">
+				<li class="li-1">
+					<a class="navbar-link" data-page="inventory">Inventory</a>
+				</li>
+				<li class="li-1">
+					<a class="navbar-link" data-page="sets">Sets</a>
+				</li>
+				<li class="li-1">
+					<a class="navbar-link" data-page="minifigure_packs">Minifigures</a>
+				</li>
+				<li class="li-1">
+					<a class="navbar-link" data-page="designIds">Design ID&apos;s</a>
+				</li>
+				<li class="li-1">
+					<a class="navbar-link" data-page="colors">Colors</a>
+				</li>
+				<li class="li-1">
+					<a class="navbar-link" data-page="stats">Stats</a>
+				</li>
+			</div>-->
+			<!--<li class="toggle">
 				<label for="drop-menu-bars" id="bars-menu">
 					<span class="bars"></span>
 				</label>
@@ -50,8 +75,8 @@
 
 			<div class="options-container">
 				<ul class="options"></ul>
-			</div>
-		</ul>
+			</div>-->
+		<!--</ul>-->
 	</nav>
 
 	<main></main>

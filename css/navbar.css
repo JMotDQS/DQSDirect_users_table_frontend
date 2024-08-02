@@ -8,9 +8,12 @@ nav {
 	margin-bottom: var(--half-rem);
 
 	/* Makes the narbar 'sticky' when it's top value is 0 */
-	position: sticky;
+	/*position: sticky;
 	top: 0;
-	z-index: 10;
+	z-index: 10;*/
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 }
 
 .sticky {
@@ -127,11 +130,11 @@ Mobile Menu
 .toggle {
 	order: 1;
 }
-.menu-items {
+/*.menu-items {
 	order: 3;
 	width: 100%;
 	display: none;
-}
+}*/
 .li-1 {
 	width: 100%;
 	text-align: center;
@@ -182,17 +185,17 @@ Mobile Menu
 	top: calc(-1 * var(--half-rem));
 }
 
-.drop-menu:checked ~ .menu-items {
+/*.drop-menu:checked ~ .menu-items {
 	display: block;
-}
+}*/
 
-.view-title {
+/*.view-title {
 	display: none;
 }
 .view-title-m {
 	align-self: center;
 	margin-left: var(--half-rem);
-}
+}*/
 
 
 /****************
@@ -200,43 +203,43 @@ Mobile Menu
 ****************/
 @media all and (min-width: 590px) {
 	.menu {
-	justify-content: center;
+		justify-content: center;
 	}
 
-	.view-title {
-	display: inline;
-	margin-right: auto;
-	margin-left: var(--full-rem);
+	/*.view-title {
+		display: inline;
+		margin-right: auto;
+		margin-left: var(--full-rem);
 	}
 
 	.view-title-m {
-	display: none;
-	}
+		display: none;
+	}*/
 
-.nav-icon-spacer-container {
-	margin-right: var(--full-rem);
-	display: none;
+	.nav-icon-spacer-container {
+		margin-right: var(--full-rem);
+		display: none;
 	}
 	.nav-logo {
-	margin: 0;
-	flex: 1;
-	order: 0;
+		margin: 0;
+		flex: 1;
+		order: 0;
 	}
 
-	.menu-items {
-	display: block;
-	width: auto;
-	}
+	/*.menu-items {
+		display: block;
+		width: auto;
+	}*/
 	.li-1 {
-	display: inline-block;
-	width: auto;
-	padding: 0 var(--half-rem);
+		display: inline-block;
+		width: auto;
+		padding: 0 var(--half-rem);
 	}
-	.menu-items .li-1:nth-child(7) {
-	padding-right: 0px;
-	}
+	/*.menu-items .li-1:nth-child(7) {
+		padding-right: 0px;
+	}*/
 
 	.toggle {
-	display: none;
+		display: none;
 	}
 }
