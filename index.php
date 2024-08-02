@@ -20,63 +20,31 @@
 
 <body id="home">
     <nav>
-        <h4 class="view-title">DQS users Admin</h4>
-            <div>
-                <input type=text />
-            </div>
-			<div class="menu-items">
-				<li class="li-1">
-					<a class="navbar-link" data-page="inventory">Inventory</a>
-				</li>
-				<li class="li-1">
-					<a class="navbar-link" data-page="sets">Sets</a>
-				</li>
-				<li class="li-1">
-					<a class="navbar-link" data-page="minifigure_packs">Minifigures</a>
-				</li>
-				<li class="li-1">
-					<a class="navbar-link" data-page="designIds">Design ID&apos;s</a>
-				</li>
-				<li class="li-1">
-					<a class="navbar-link" data-page="colors">Colors</a>
-				</li>
-				<li class="li-1">
-					<a class="navbar-link" data-page="stats">Stats</a>
-				</li>
-			</div>
-        <!--<ul class="menu">
-			<h4 class="view-title">DQS users Admin</h4>
-            <input type=text />
-			<div class="menu-items">
-				<li class="li-1">
-					<a class="navbar-link" data-page="inventory">Inventory</a>
-				</li>
-				<li class="li-1">
-					<a class="navbar-link" data-page="sets">Sets</a>
-				</li>
-				<li class="li-1">
-					<a class="navbar-link" data-page="minifigure_packs">Minifigures</a>
-				</li>
-				<li class="li-1">
-					<a class="navbar-link" data-page="designIds">Design ID&apos;s</a>
-				</li>
-				<li class="li-1">
-					<a class="navbar-link" data-page="colors">Colors</a>
-				</li>
-				<li class="li-1">
-					<a class="navbar-link" data-page="stats">Stats</a>
-				</li>
-			</div>-->
-			<!--<li class="toggle">
-				<label for="drop-menu-bars" id="bars-menu">
-					<span class="bars"></span>
-				</label>
-			</li>
-
-			<div class="options-container">
-				<ul class="options"></ul>
-			</div>-->
-		<!--</ul>-->
+        <h4>DQS users Admin</h4>
+        <div id="navbar-search-group">
+            <label for="navbar-search">User Search:</label>
+            <input type=text id="navbar-search" name="navbar-search" />
+        </div>
+        <!--<div class="menu-items">
+            <li>
+                <a class="navbar-link" data-page="inventory">Inventory</a>
+            </li>
+            <li>
+                <a class="navbar-link" data-page="sets">Sets</a>
+            </li>
+            <li>
+                <a class="navbar-link" data-page="minifigure_packs">Minifigures</a>
+            </li>
+            <li>
+                <a class="navbar-link" data-page="designIds">Design ID&apos;s</a>
+            </li>
+            <li>
+                <a class="navbar-link" data-page="colors">Colors</a>
+            </li>
+            <li>
+                <a class="navbar-link" data-page="stats">Stats</a>
+            </li>
+        </div>-->
 	</nav>
 
 	<main></main>
