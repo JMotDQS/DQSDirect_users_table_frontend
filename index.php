@@ -20,7 +20,7 @@
 
 <body id="home">
     <nav>
-        <h4>DQS users Admin</h4>
+        <h3>DQS users Admin</h3>
         <div id="navbar-search-group">
             <label for="navbar-search">User Search:</label>
             <input type=text id="navbar-search" name="navbar-search" />

@@ -4,14 +4,15 @@ Media queries are for styling on larger screens.
 */
 
 /* @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet'); */
-@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300;400;700&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300;400;700&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
 
 *, *::before, *::after {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 	/* font-family: "Raleway"; */
-	font-family: "Signika";
+	font-family: "Montserrat";
 }
 
 :root {
@@ -51,9 +52,10 @@ Media queries are for styling on larger screens.
 body {
 	background-color: var(--color-page-background);
 	/*margin: var(--half-rem);*/
-	font-size: var(--full-rem);
+	font-size: calc(var(--full-rem) * .75);
 	/* font-family: "Raleway"; */
-	font-family: "Signika";
+	/*font-family: "Signika";*/
+	/*font-family: "Montserrat";*/
 }
 
 main {
