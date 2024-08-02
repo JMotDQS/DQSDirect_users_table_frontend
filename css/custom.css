@@ -19,6 +19,7 @@ Media queries are for styling on larger screens.
 	--color-medium-dark: #02055a;
 	--color-medium-light: #021988;
 	--color-light: #253da1;
+	--color-extra-light: hsla(228, 63%, 63%, 1);
 
 	--color-lego-yellow: #ffcf00;
 	--color-lego-yellow-secondary: #b39200;

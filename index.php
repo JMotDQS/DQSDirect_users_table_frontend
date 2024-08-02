@@ -25,7 +25,7 @@
             <label for="navbar-search">User Search:</label>
             <input type=text id="navbar-search" name="navbar-search" />
         </div>
-        <!--<div class="menu-items">
+        <div class="menu-items">
             <li>
                 <a class="navbar-link" data-page="inventory">Inventory</a>
             </li>
@@ -44,7 +44,7 @@
             <li>
                 <a class="navbar-link" data-page="stats">Stats</a>
             </li>
-        </div>-->
+        </div>
 	</nav>
 
 	<main></main>
