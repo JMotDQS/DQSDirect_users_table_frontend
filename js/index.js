@@ -1,12 +1,26 @@
 $(document).ready(function() {
-	$('.nav-logo').on('click', function() {
+    $('app').html('Please Start Search');
+/*
+    $('.nav-logo').on('click', function() {
 		loadPage($(this).data('page'));
 		loadPage('kms_nav', g_NAV);
 	});
 
 	loadPage('kms');
 	loadPage('kms_nav', g_NAV);
+*/
 });
+
+/*******
+ if(!$('#dnr').is(':checked')) {
+    console.log("DNR");
+} else {
+    console.log("Can Work");
+}
+
+$('#dnr').is(':checked')
+Returns true/false based on if a checkbox is checked or not.
+*******/
 
 function dataCleanUp(param_string) {
 	var temp_string = param_string.trim().replace(/&/g, "&amp;");

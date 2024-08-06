@@ -53,6 +53,7 @@ body {
 	background-color: var(--color-page-background);
 	/*margin: var(--half-rem);*/
 	font-size: calc(var(--full-rem) * .75);
+	color: var(--color-dark);
 	/* font-family: "Raleway"; */
 	/*font-family: "Signika";*/
 	/*font-family: "Montserrat";*/
@@ -61,6 +62,9 @@ body {
 main {
 	padding: var(--quarter-rem);
 	margin: 0 calc(var(--full-rem) * 2);
+	text-align: center;
+	font-weight: 600;
+	font-size: var(--full-rem);
 	/* display: none; */
 }
 

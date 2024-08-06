@@ -1,7 +1,7 @@
 <!doctype html>
 
 <html>
-<head>
+	<head>
 	<meta charset="utf-8"/>	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
 	<!-- Angular will break without this line. It is not needed for Chrome -->
@@ -9,64 +9,94 @@
 
 	<title>My LEGO&reg; App</title>
 
-<!-- Custom CSS -->
+	<!-- Custom CSS -->
 	<link rel="stylesheet" href="css/custom.css">
 	<link rel="stylesheet" href="css/navbar.css">
+	<link rel="stylesheet" href="css/results.css">
 
-<!-- Google Fonts -->
+	<!-- Google Fonts -->
 	<!-- <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet"> -->
 
-</head>
+	</head>
 
-<body id="home">
-    <nav>
-        <h3>DQS users Admin</h3>
-        <div id="navbar-search-group">
-            <label for="navbar-search">User Search:</label>
-            <input type=text id="navbar-search" name="navbar-search" />
-        </div>
-        <div class="menu-items">
-            <li>
-                <a class="navbar-link" data-page="inventory">Inventory</a>
-            </li>
-            <li>
-                <a class="navbar-link" data-page="sets">Sets</a>
-            </li>
-            <li>
-                <a class="navbar-link" data-page="minifigure_packs">Minifigures</a>
-            </li>
-            <li>
-                <a class="navbar-link" data-page="designIds">Design ID&apos;s</a>
-            </li>
-            <li>
-                <a class="navbar-link" data-page="colors">Colors</a>
-            </li>
-            <li>
-                <a class="navbar-link" data-page="stats">Stats</a>
-            </li>
-        </div>
+	<body id="home">
+	<nav>
+		<h3>DQS users Admin</h3>
+		<div id="navbar-search-group">
+			<label for="navbar-search">User Search:</label>
+			<input type=text id="navbar-search" name="navbar-search" />
+		</div>
+		<div class="menu-items">
+			<li>
+				<a class="navbar-link" data-page="inventory">Inventory</a>
+			</li>
+			<li>
+				<a class="navbar-link" data-page="sets">Sets</a>
+			</li>
+			<li>
+				<a class="navbar-link" data-page="minifigure_packs">Minifigures</a>
+			</li>
+			<li>
+				<a class="navbar-link" data-page="designIds">Design ID&apos;s</a>
+			</li>
+			<li>
+				<a class="navbar-link" data-page="colors">Colors</a>
+			</li>
+			<li>
+				<a class="navbar-link" data-page="stats">Stats</a>
+			</li>
+		</div>
 	</nav>
 
-	<main></main>
+	<main>
+		<app></app>
+		<div class="search-results">
+			<div class="card">
+				<div class="card-grid card-titles">
+					<p>Last Name, First Name</p>
+					<p>Email</p>
+					<p>Badge</p>
+					<p>DNR</p>
+				</div>
+				<div class="card-grid card-data">
+					<div>
+						<p>Song, River</p>
+					</div>
+					<div>
+						<p>rsong@dwho.com</p>
+					</div>
+					<div>
+						<p>DQS99999</p>
+					</div>
+					<div>
+						<label class="switch">
+							<input type="checkbox" id="dnr" name="dnr" value="0">
+							<span class="slider round"></span>
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
 
-	
-<!-- Modal -->
+
+	<!-- Modal -->
 	<div id="myModal" class="modal" role="dialog">
 	</div>
-<!-- Modal -->
+	<!-- Modal -->
 
-<!-- Help -->
+	<!-- Help -->
 	<div id="help-window" class="help-window">
 	</div>
-<!-- Help -->
+	<!-- Help -->
 
-<!-- JQuery CDN -->
+	<!-- JQuery CDN -->
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
-<!-- Latest compiled Font Awesome JavaScript -->
+	<!-- Latest compiled Font Awesome JavaScript -->
 	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
 
-<!-- Custom JavaScript -->
-	<!--<script src="/js/index.js"></script>-->
-</body>
+	<!-- Custom JavaScript -->
+	<script src="js/index.js"></script>
+	</body>
 </html>
