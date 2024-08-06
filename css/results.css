@@ -29,8 +29,8 @@
 .switch {
 	position: relative;
 	display: inline-block;
-	width: 51px;
-	height: var(--full-half-rem);
+	width: calc((var(--full-rem) * 2.5) + 2px);
+	height: var(--full-rem);
 }
 
 .switch input { 
@@ -54,9 +54,9 @@
 .slider:before {
 	position: absolute;
 	content: "";
-	height: var(--full-half-rem);
-	width: var(--full-half-rem);
-	left: 1px;
+	height: var(--full-rem);
+	width: var(--full-rem);
+	left: 0px;
 	bottom: 0px;
 	background-color: white;
 	opacity: .875;
@@ -80,10 +80,10 @@ input:checked + .slider:before {
 
 /* Rounded sliders */
 .slider.round {
-	border-radius: var(--full-half-rem);
+	border-radius: var(--full-rem);
 	outline: 2px solid var(--color-dark);
 }
 
 .slider.round:before {
-	border-radius: var(--full-half-rem);
+	border-radius: var(--full-rem);
 }
