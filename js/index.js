@@ -1,15 +1,70 @@
 $(document).ready(function() {
-    $('app').html('Please Start Search');
-/*
-    $('.nav-logo').on('click', function() {
-		loadPage($(this).data('page'));
-		loadPage('kms_nav', g_NAV);
-	});
+	$('app').html('Please Start Search');
+	/*$('.dnr').change(
+		function() {
+			if($(this).is(':checked')) {
+				console.log('Checked');
+				dnrToggleTest();
+			} else {
+				console.log('UnChecked');
+				dnrToggleTest();
+			}
+		}
+	)*/
+	//dnrToggleTest();
+	setSearchResults();
 
-	loadPage('kms');
-	loadPage('kms_nav', g_NAV);
-*/
+	/*console.log(searchResults);
+	for(i = 0; i <  searchResults.length; i++) {
+		console.log('id:', searchResults[i]['id']);
+		console.log('firstName:', searchResults[i]['firstName']);
+		console.log('lastName:', searchResults[i]['lastName']);
+		console.log('badge:', searchResults[i]['badge']);
+		console.log('email:', searchResults[i]['email']);
+		console.log('approved:', searchResults[i]['approved']);
+		console.log('activated:', searchResults[i]['activated']);
+		console.log('--------------------------------------');
+	}*/
 });
+
+const searchResults = [
+	{
+		'id':702,
+		'firstName':'River',
+		'lastName':'Song',
+		'email':'rsong@dwho.com',
+		'badge':'DQS99998',
+		'approved':1,
+		'activated':1
+	},
+	{
+		'id':703,
+		'firstName':'Amy',
+		'lastName':'Pond',
+		'email':'apond@dwho.com',
+		'badge':'DQS99997',
+		'approved':0,
+		'activated':0
+	},
+	{
+		'id':704,
+		'firstName':'Clara',
+		'lastName':'Oswald',
+		'email':'coswald@dwho.com',
+		'badge':'DQS99996',
+		'approved':1,
+		'activated':0
+	},
+	{
+		'id':705,
+		'firstName':'Rory',
+		'lastName':'Williams',
+		'email':'rwilliams@dwho.com',
+		'badge':'DQS99995',
+		'approved':0,
+		'activated':1
+	}
+];
 
 /*******
  if(!$('#dnr').is(':checked')) {
@@ -21,6 +76,68 @@ $(document).ready(function() {
 $('#dnr').is(':checked')
 Returns true/false based on if a checkbox is checked or not.
 *******/
+function dnrToggleTest(param_id) {
+	console.log('param_id:', param_id);
+	if($('#dnr_'+param_id).is(':checked')) {
+		console.log("DNR");
+		$('#active-label_'+param_id).addClass('user-deactivated');
+		$('#active-label_'+param_id).html('Deactivated');
+	} else {
+		console.log("Can Work");
+		$('#active-label_'+param_id).removeClass('user-deactivated');
+		$('#active-label_'+param_id).html('Deactivate');
+	}
+}
+
+function setSearchResults() {
+	temp_html = '';
+	resultsLength = searchResults.length;
+
+	for(i = 0; i <  resultsLength; i++) {
+		temp_html += `<div class="card" data-id='${searchResults[i]['id']}'>`;
+			temp_html += `<div class="card-grid card-titles">`;
+					temp_html += `<div>Last, First Name</div>`;
+					temp_html += `<div>Email</div>`;
+					temp_html += `<div>Badge</div>`;
+					temp_html += `<div class="active-label" id="active-label_${searchResults[i]['id']}">Deactivate</div>`;
+			temp_html += `</div>`;
+			temp_html += `<div class="card-grid card-data">`;
+				temp_html += `<div>${searchResults[i]['lastName']}, ${searchResults[i]['firstName']}</div>`;
+				temp_html += `<div>${searchResults[i]['email']}</div>`;
+				temp_html += `<div>${searchResults[i]['badge']}</div>`;
+				temp_html += `<div>`;
+					temp_html += `<label class="switch">`;
+						temp_html += `<input type="checkbox" id="dnr_${searchResults[i]['id']}" name="dnr_${searchResults[i]['id']}" onClick>`;
+						temp_html += `<span class="slider round"></span>`;
+					temp_html += `</label>`;
+				temp_html += `</div>`;
+			temp_html += `</div>`;
+		temp_html += `</div>`;
+	}
+	$('.search-results').html(temp_html);
+
+	for(i = 0; i <  resultsLength; i++) {
+		if(parseInt(searchResults[i]['approved']) == 1 && parseInt(searchResults[i]['activated']) == 1) {
+			$('#dnr_'+searchResults[i]['id']).prop( "checked", false );
+		} else {
+			$('#dnr_'+searchResults[i]['id']).prop( "checked", true );
+		}
+
+		$('#dnr_'+searchResults[i]['id']).change(
+			function() {
+				if($(this).is(':checked')) {
+					console.log('Checked');
+					dnrToggleTest(searchResults[i]['id']);
+				} else {
+					console.log('UnChecked');
+					dnrToggleTest(searchResults[i]['id']);
+				}
+			}
+		)
+		console.log(searchResults[i]['id']);
+		dnrToggleTest(searchResults[i]['id']);
+	}
+}
 
 function dataCleanUp(param_string) {
 	var temp_string = param_string.trim().replace(/&/g, "&amp;");

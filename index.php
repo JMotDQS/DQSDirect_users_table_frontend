@@ -7,7 +7,7 @@
 	<!-- Angular will break without this line. It is not needed for Chrome -->
 	<meta http-equiv="X-UA-Compatible" content="IE=11" />
 
-	<title>My LEGO&reg; App</title>
+	<title>DQS Users Admin</title>
 
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="css/custom.css">
@@ -51,31 +51,31 @@
 	<main>
 		<app></app>
 		<div class="search-results">
-			<div class="card">
+			<!--<div class="card" data-id='1'>
 				<div class="card-grid card-titles">
-					<p>Last Name, First Name</p>
-					<p>Email</p>
-					<p>Badge</p>
-					<p>DNR</p>
+					<div>Last, First Name</div>
+					<div>Email</div>
+					<div>Badge</div>
+					<div id="active-label"></div>
 				</div>
 				<div class="card-grid card-data">
 					<div>
-						<p>Song, River</p>
+						Song, River
 					</div>
 					<div>
-						<p>rsong@dwho.com</p>
+						rsong@dwho.com
 					</div>
 					<div>
-						<p>DQS99999</p>
+						DQS99999
 					</div>
 					<div>
 						<label class="switch">
-							<input type="checkbox" id="dnr" name="dnr" value="0">
+							<input type="checkbox" id="dnr" name="dnr">
 							<span class="slider round"></span>
 						</label>
 					</div>
 				</div>
-			</div>
+			</div>-->
 		</div>
 	</main>
 
