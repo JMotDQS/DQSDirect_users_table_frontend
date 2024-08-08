@@ -1,30 +1,6 @@
 $(document).ready(function() {
 	$('app').html('Please Start Search');
-	/*$('.dnr').change(
-		function() {
-			if($(this).is(':checked')) {
-				console.log('Checked');
-				dnrToggleTest();
-			} else {
-				console.log('UnChecked');
-				dnrToggleTest();
-			}
-		}
-	)*/
-	//dnrToggleTest();
 	setSearchResults();
-
-	/*console.log(searchResults);
-	for(i = 0; i <  searchResults.length; i++) {
-		console.log('id:', searchResults[i]['id']);
-		console.log('firstName:', searchResults[i]['firstName']);
-		console.log('lastName:', searchResults[i]['lastName']);
-		console.log('badge:', searchResults[i]['badge']);
-		console.log('email:', searchResults[i]['email']);
-		console.log('approved:', searchResults[i]['approved']);
-		console.log('activated:', searchResults[i]['activated']);
-		console.log('--------------------------------------');
-	}*/
 });
 
 const searchResults = [
@@ -80,12 +56,10 @@ function dnrToggleTest(e) {
 	e.preventDefault;
 	my_id = parseInt(e.slice( (e.indexOf('_') + 1) ));
 	if($('#' + e).is(':checked')) {
-		//console.log("DNR");
 		$('#active-label_' + my_id).addClass('user-deactivated');
 		$('#active-label_' + my_id).html('Deactivated');
 		testFindIndex(my_id, false);
 	} else {
-		//console.log("Can Work");
 		$('#active-label_' + my_id).removeClass('user-deactivated');
 		$('#active-label_' + my_id).html('Deactivate');
 		testFindIndex(my_id, true);
@@ -93,16 +67,7 @@ function dnrToggleTest(e) {
 }
 
 function testFindIndex(param_id, param_flag) {
-	/*const indexes = [];
-	for(i = 0; i < searchResults.length; i++) {
-		if(searchResults[i].approved == 1) {
-			indexes.push(i);
-		}
-	}
-
-	console.log('indexes:', indexes);*/
 	var index = searchResults.findIndex(p => p.id == param_id);
-	//console.log("searchResults[index]:", searchResults[index]);
 	if(param_flag) {
 		searchResults[index].approved = 1;
 		searchResults[index].activated = 1;
@@ -110,9 +75,6 @@ function testFindIndex(param_id, param_flag) {
 		searchResults[index].approved = 0;
 		searchResults[index].activated = 0;
 	}
-	
-	//console.log("searchResults[index]:", searchResults[index]);
-	//console.log("index:", index);
 }
 
 function setSearchResults() {
@@ -149,18 +111,6 @@ function setSearchResults() {
 			$('#dnr_' + searchResults[i]['id']).prop( "checked", true );
 		}
 
-		/*$('#dnr_'+searchResults[i]['id']).change(
-			function() {
-				if($(this).is(':checked')) {
-					console.log('Checked');
-					dnrToggleTest(searchResults[i]['id']);
-				} else {
-					console.log('UnChecked');
-					dnrToggleTest(searchResults[i]['id']);
-				}
-			}
-		)
-		console.log(searchResults[i]['id']);*/
 		dnrToggleTest('dnr_' + searchResults[i]['id']);
 	}
 }
