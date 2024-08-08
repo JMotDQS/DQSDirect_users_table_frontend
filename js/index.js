@@ -76,17 +76,43 @@ const searchResults = [
 $('#dnr').is(':checked')
 Returns true/false based on if a checkbox is checked or not.
 *******/
-function dnrToggleTest(param_id) {
-	console.log('param_id:', param_id);
-	if($('#dnr_'+param_id).is(':checked')) {
-		console.log("DNR");
-		$('#active-label_'+param_id).addClass('user-deactivated');
-		$('#active-label_'+param_id).html('Deactivated');
+function dnrToggleTest(e) {
+	e.preventDefault;
+	my_id = parseInt(e.slice( (e.indexOf('_') + 1) ));
+	if($('#' + e).is(':checked')) {
+		//console.log("DNR");
+		$('#active-label_' + my_id).addClass('user-deactivated');
+		$('#active-label_' + my_id).html('Deactivated');
+		testFindIndex(my_id, false);
 	} else {
-		console.log("Can Work");
-		$('#active-label_'+param_id).removeClass('user-deactivated');
-		$('#active-label_'+param_id).html('Deactivate');
+		//console.log("Can Work");
+		$('#active-label_' + my_id).removeClass('user-deactivated');
+		$('#active-label_' + my_id).html('Deactivate');
+		testFindIndex(my_id, true);
 	}
+}
+
+function testFindIndex(param_id, param_flag) {
+	/*const indexes = [];
+	for(i = 0; i < searchResults.length; i++) {
+		if(searchResults[i].approved == 1) {
+			indexes.push(i);
+		}
+	}
+
+	console.log('indexes:', indexes);*/
+	var index = searchResults.findIndex(p => p.id == param_id);
+	//console.log("searchResults[index]:", searchResults[index]);
+	if(param_flag) {
+		searchResults[index].approved = 1;
+		searchResults[index].activated = 1;
+	} else {
+		searchResults[index].approved = 0;
+		searchResults[index].activated = 0;
+	}
+	
+	//console.log("searchResults[index]:", searchResults[index]);
+	//console.log("index:", index);
 }
 
 function setSearchResults() {
@@ -107,7 +133,7 @@ function setSearchResults() {
 				temp_html += `<div>${searchResults[i]['badge']}</div>`;
 				temp_html += `<div>`;
 					temp_html += `<label class="switch">`;
-						temp_html += `<input type="checkbox" id="dnr_${searchResults[i]['id']}" name="dnr_${searchResults[i]['id']}" onClick>`;
+						temp_html += `<input type="checkbox" id="dnr_${searchResults[i]['id']}" name="dnr_${searchResults[i]['id']}" onClick="dnrToggleTest(this.id)">`;
 						temp_html += `<span class="slider round"></span>`;
 					temp_html += `</label>`;
 				temp_html += `</div>`;
@@ -118,12 +144,12 @@ function setSearchResults() {
 
 	for(i = 0; i <  resultsLength; i++) {
 		if(parseInt(searchResults[i]['approved']) == 1 && parseInt(searchResults[i]['activated']) == 1) {
-			$('#dnr_'+searchResults[i]['id']).prop( "checked", false );
+			$('#dnr_' + searchResults[i]['id']).prop( "checked", false );
 		} else {
-			$('#dnr_'+searchResults[i]['id']).prop( "checked", true );
+			$('#dnr_' + searchResults[i]['id']).prop( "checked", true );
 		}
 
-		$('#dnr_'+searchResults[i]['id']).change(
+		/*$('#dnr_'+searchResults[i]['id']).change(
 			function() {
 				if($(this).is(':checked')) {
 					console.log('Checked');
@@ -134,8 +160,8 @@ function setSearchResults() {
 				}
 			}
 		)
-		console.log(searchResults[i]['id']);
-		dnrToggleTest(searchResults[i]['id']);
+		console.log(searchResults[i]['id']);*/
+		dnrToggleTest('dnr_' + searchResults[i]['id']);
 	}
 }
 
